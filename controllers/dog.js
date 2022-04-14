@@ -1,8 +1,15 @@
 var dog = require('../models/dog'); 
  
 // List of all Costumes 
-exports.dog_list = function(req, res) { 
-    res.send('NOT IMPLEMENTED: dog list'); 
+exports.dog_list = async function(req, res) {
+    try{
+    thedogs = await hotel.find();
+    res.send(thedogs);
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
 }; 
  
 // for a specific Costume. 
