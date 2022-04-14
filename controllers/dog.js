@@ -3,7 +3,7 @@ var dog = require('../models/dog');
 // List of all Costumes 
 exports.dog_list = async function(req, res) {
     try{
-    thedogs = await hotel.find();
+    thedogs = await dog.find();
     res.send(thedogs);
     }
     catch(err){
