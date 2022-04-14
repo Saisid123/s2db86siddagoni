@@ -69,3 +69,31 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// We can seed the collection if needed on server start
+async function recreateDB(){ 
+  // Delete everything 
+await dog.deleteMany(); 
+
+ let instance1 = new dog({breed:"Itlian grey hound", age:10, name:"Tommy"}); 
+ instance1.save( function(err,doc) { 
+ if(err) return console.error(err); 
+ console.log("First object saved") 
+ });
+
+ let instance2 = new dog({breed:"Pug", age:10, name:"Rommy"}); 
+ instance2.save( function(err,doc) { 
+ if(err) return console.error(err); 
+ console.log("Second object saved") 
+ });
+
+ let instance3 = new dog({breed:"Retriever", age:10, name:"Jommy"}); 
+ instance3.save( function(err,doc) { 
+ if(err) return console.error(err); 
+ console.log("Third object saved") 
+ });
+
+} 
+
+let reseed = true; 
+if (reseed) { recreateDB();}
