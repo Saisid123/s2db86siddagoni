@@ -1,4 +1,4 @@
-var Costume = require('../models/costume'); 
+var dog = require('../models/dog'); 
  
 // List of all Costumes 
 exports.dog_list = function(req, res) { 
