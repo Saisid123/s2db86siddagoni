@@ -83,7 +83,7 @@ await dog.deleteMany();
  console.log("First object saved") 
  });
 
- let instance2 = new dog({breed:"Pug", age:10, name:"Rommy"}); 
+ let instance2 = new dog({breed:"yolo", age:10, name:"Rommy"}); 
  instance2.save( function(err,doc) { 
  if(err) return console.error(err); 
  console.log("Second object saved") 
