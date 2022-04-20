@@ -1,0 +1,20 @@
+extends layout
+
+block content
+ h1= title
+
+ - let breed = toShow.breed
+ - let age= toShow.age
+ - let name= toShow.name
+    
+  div
+    div.row
+      div(class='dogAttr mr-3') breed is:
+      div #{breed}
+    div.row
+      div(class='dogAttr mr-3') age is:
+      div #{age}
+    div.row
+      div(class='dogAttr mr-3') name is:
+      div #{name}
+    
