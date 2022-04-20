@@ -10,3 +10,8 @@ a {
   background-color: aquamarine;
   width: 120px;
  }
+ .dogDetailAttr{
+  background-color:rgb(255, 252, 196); 
+  width: 120px; 
+  border: 1px solid black;
+}
