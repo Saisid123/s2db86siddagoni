@@ -1,0 +1,45 @@
+extends layout 
+ 
+block content 
+ h1(class="text-center")= title 
+ if (toShow == null) 
+  h2 No instance to delete 
+ else
+  - let dogid = toShow._id
+  - let breed = toShow.breed
+  - let age = toShow.age
+  - let name = toShow.name
+
+  div.row(class='mb-2')
+   div.mr-1 ID is
+   div #{dogid}
+  - let actionid = "/resource/hotel/" + doglid 
+  form(id='dogForm',class="text-center", action=actionid, method="PUT") 
+    div.form-group 
+        label.dogAttr(for='breed') breed 
+        input#breed(type='text', name='breed', value= breed) 
+    div.form-group 
+        label.ageAttr(for='age') age
+        input#age(type='number', name='age', value= age)
+    div.form-group 
+        label.dogAttr(for='name') name 
+        input#name(type='text', name='name', value= name)
+    input(type="submit" class="btn btn-warning m-2") 
+ 
+  script. 
+    document.forms['dogForm'].addEventListener('submit', (event) => { 
+        event.preventDefault(); 
+        // TODO do something here to show user that form is being submitted 
+        fetch(event.target.action, { 
+            method: 'PUT', 
+            body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+        }).then((resp) => { 
+            return resp.json(); // or resp.text() or whatever the server sends 
+        }).then((body) => { 
+            alert("Update succeded") 
+            // TODO handle body 
+        }).catch((error) => { 
+            // TODO handle error 
+            alert("Update failed " + error ) 
+        }); 
+        });
