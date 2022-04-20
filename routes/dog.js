@@ -4,5 +4,5 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', dog_controlers.dog_view_all_Page );
-router.get('/detail', dog_controlers.costume_view_one_Page);
+router.get('/detail', dog_controlers.dog_view_one_Page);
 module.exports = router;
