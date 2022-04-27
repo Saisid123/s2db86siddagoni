@@ -6,7 +6,12 @@ type: String,
 minLength: 1,
 maxLength: 10
     },
-age: Number,
+age:{
+    type:Number,
+    min:1,
+    max:3
+
+},
 name: String
 })
 
