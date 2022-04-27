@@ -4,7 +4,7 @@ const dogSchema = mongoose.Schema({
 
 type: String,
 minLength: 1,
-maxLength: 7
+maxLength: 15
     },
 age: Number,
 name: String
