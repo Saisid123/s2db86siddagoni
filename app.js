@@ -56,6 +56,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(require('express-session')({
   secret: 'keyboard cat',
   resave: false,
@@ -79,29 +80,10 @@ var Account =require('./models/account');
 passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
-
 // We can seed the collection if needed on server start
 async function recreateDB(){ 
   // Delete everything 
-await dog.deleteMany(); 
+ await dog.deleteMany(); 
 
  let instance1 = new dog({breed:"Itlian grey hound", age:10, name:"Tommy"}); 
  instance1.save( function(err,doc) { 
@@ -121,7 +103,25 @@ await dog.deleteMany();
  console.log("Third object saved") 
  });
 
-} 
+}
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
 
 let reseed = true; 
 if (reseed) { recreateDB();}
