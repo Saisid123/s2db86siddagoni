@@ -85,7 +85,7 @@ async function recreateDB(){
   // Delete everything 
  await dog.deleteMany(); 
 
- let instance1 = new dog({breed:"Itlian grey hound", age:10, name:"Tommy"}); 
+ let instance1 = new dog({breed:"husky", age:10, name:"Tommy"}); 
  instance1.save( function(err,doc) { 
  if(err) return console.error(err); 
  console.log("First object saved") 
