@@ -1,16 +1,14 @@
-const mongoose = require("mongoose") 
+const mongoose = require("mongoose")
 const dogSchema = mongoose.Schema({
 breed:{
-type: String,
-minLength: 1,
-maxLength: 13
-},
-age:{
-    type:Number,
-    min:1
-
-},
-name: String
+    type: String,
+    minLength: 1,
+    maxLength:13
+} ,
+age: Number,
+name: {
+    type: String,
+    min: 1,
+    max: 10}
 })
-
-module.exports = mongoose.model("dog", dogSchema) 
+module.exports = mongoose.model("dog", dogSchema)
