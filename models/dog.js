@@ -1,10 +1,9 @@
 const mongoose = require("mongoose") 
 const dogSchema = mongoose.Schema({
-    breed:{
-
+breed:{
 type: String,
 minLength: 1,
-maxLength: 10
+maxLength: 13
     },
 age:{
     type:Number,
