@@ -8,8 +8,7 @@ maxLength: 10
     },
 age:{
     type:Number,
-    min:1,
-   
+    min:1
 
 },
 name: String
