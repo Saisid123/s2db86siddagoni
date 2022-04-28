@@ -9,6 +9,6 @@ age: Number,
 name: {
     type: String,
     min: 1,
-    max: 10}
+    max: 7}
 })
 module.exports = mongoose.model("dog", dogSchema)
