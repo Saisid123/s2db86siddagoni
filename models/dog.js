@@ -9,7 +9,7 @@ maxLength: 10
 age:{
     type:Number,
     min:1,
-    max:3
+   
 
 },
 name: String
