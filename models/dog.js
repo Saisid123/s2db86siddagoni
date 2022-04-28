@@ -4,7 +4,7 @@ breed:{
 type: String,
 minLength: 1,
 maxLength: 13
-    },
+},
 age:{
     type:Number,
     min:1
